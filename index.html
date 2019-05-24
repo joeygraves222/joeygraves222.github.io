@@ -6,6 +6,9 @@
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
+        <link rel="stylesheet" href="getmdl-select-master/getmdl-select.min.css">
+        <script defer src="getmdl-select-master/getmdl-select.min.js"></script>
+
 
         <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -31,7 +34,7 @@
             .Footer
             {
                 background-color: #31435e;
-                margin-top: 50px;
+                margin-top: 75px;
                 flex-direction: row;
                 padding: 50px;
             }
@@ -51,12 +54,21 @@
             }
             .SelectionInnerContainer
             {
-                width: 300px;
+                width: 550px;
+                height: 250px;
                 margin-top: 10px;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
+                flex-direction: row;
+                justify-content: space-evenly;
                 align-items: flex-start;
+            }
+
+            .SelectionInnerSubContainer
+            {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                height: 100%;
             }
 
             .CalculatorsMainContainer
@@ -100,6 +112,17 @@
                 align-items: center;
             }
 
+            .SelectInputContainer
+            {
+                margin-top: 50px;
+                width: 75%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                margin-bottom: 100px;
+            }
+
         </style>
 
         <header class="Header">
@@ -117,22 +140,26 @@
             <div class="SelectionContainer">
                 <label>What type of property are you calculating for?</label>
                 <div class="SelectionInnerContainer">
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-                        <input type="radio" id="option-1" class="mdl-radio__button" value="ResSingle" onclick="OnSelectionChanged(this)" name="Type" checked>
-                        <span class="mdl-radio__label">Residential (Single-Family)</span>
-                    </label>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-                        <input type="radio" id="option-2" class="mdl-radio__button" value="ResMulti" onclick="OnSelectionChanged(this)" name="Type">
-                        <span class="mdl-radio__label">Residential (Multi-Family)</span>
-                    </label>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-                        <input type="radio" id="option-3" class="mdl-radio__button" value="Comm" onclick="OnSelectionChanged(this)" name="Type">
-                        <span class="mdl-radio__label">Commercial (Business)</span>
-                    </label>
-                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-                        <input type="radio" id="option-4" class="mdl-radio__button" value="Inst" onclick="OnSelectionChanged(this)" name="Type">
-                        <span class="mdl-radio__label">Institutional</span>
-                    </label>
+                    <div class=SelectionInnerSubContainer>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                            <input type="radio" id="option-1" class="mdl-radio__button" value="ResSingle" onclick="OnSelectionChanged(this)" name="Type" checked>
+                            <span class="mdl-radio__label">Residential (Single-Family)</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                            <input type="radio" id="option-2" class="mdl-radio__button" value="ResMulti" onclick="OnSelectionChanged(this)" name="Type">
+                            <span class="mdl-radio__label">Residential (Multi-Family)</span>
+                        </label>
+                    </div>
+                    <div class=SelectionInnerSubContainer>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+                            <input type="radio" id="option-3" class="mdl-radio__button" value="Comm" onclick="OnSelectionChanged(this)" name="Type">
+                            <span class="mdl-radio__label">Commercial (Business)</span>
+                        </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+                            <input type="radio" id="option-4" class="mdl-radio__button" value="Inst" onclick="OnSelectionChanged(this)" name="Type">
+                            <span class="mdl-radio__label">Institutional</span>
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -281,16 +308,33 @@
                                 </tbody>
                             </table>
                         </div>
-                            <div class="mdl-textfield mdl-js-textfield UsageInputContainer">
+                        <div class="SelectInputContainer">
+                        <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                            <input type="text" value="" class="mdl-textfield__input" id="CommMeterSize" readonly>
+                            <input type="hidden" value="" id="CommMeterSizeValue" name="CommMeterSize">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                            <label for="CommMeterSize" class="mdl-textfield__label">Meter Size</label>
+                            <ul for="CommMeterSize" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item" data-val="1">1" or Smaller</li>
+                                <li class="mdl-menu__item" data-val="1.5">1<sup>1</sup>&frasl;<sub>2</sub>"</li>
+                                <li class="mdl-menu__item" data-val="2">2"</li>
+                                <li class="mdl-menu__item" data-val="3">3"</li>
+                                <li class="mdl-menu__item" data-val="4">4"</li>
+                                <li class="mdl-menu__item" data-val="6">6"</li>
+                                <li class="mdl-menu__item" data-val="8">8"</li>
+                            </ul>
+                        </div>
+                            <div class="mdl-textfield mdl-js-textfield">
                                 <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="CommUsageInput">
                                 <label class="mdl-textfield__label" for="CommUsageInput">Water Usage (In Gallons)</label>
                                 <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
                             </div>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        </div>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateCommBill()">
                                 Calculate
                              </button>
                              <div class=ResultsDiv>
-                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="CommResultText">245.50</b>
+                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="CommResultText"></b>
                              </div>
                 </div>
 
@@ -395,16 +439,35 @@
                                 </tbody>
                             </table>
                         </div>
-                            <div class="mdl-textfield mdl-js-textfield UsageInputContainer">
-                                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="InstUsageInput">
-                                <label class="mdl-textfield__label" for="InstUsageInput">Water Usage (In Gallons)</label>
-                                <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
+
+                        <div class="SelectInputContainer">
+                                <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                                    <input type="text" value="" class="mdl-textfield__input" id="InstMeterSize" readonly>
+                                    <input type="hidden" value="" id="InstMeterSizeValue" name="InstMeterSize">
+                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                                    <label for="InstMeterSize" class="mdl-textfield__label">Meter Size</label>
+                                    <ul for="InstMeterSize" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                        <li class="mdl-menu__item" data-val="1">1" or Smaller</li>
+                                        <li class="mdl-menu__item" data-val="1.5">1<sup>1</sup>&frasl;<sub>2</sub>"</li>
+                                        <li class="mdl-menu__item" data-val="2">2"</li>
+                                        <li class="mdl-menu__item" data-val="3">3"</li>
+                                        <li class="mdl-menu__item" data-val="4">4"</li>
+                                        <li class="mdl-menu__item" data-val="6">6"</li>
+                                        <li class="mdl-menu__item" data-val="8">8"</li>
+                                    </ul>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="InstUsageInput">
+                                    <label class="mdl-textfield__label" for="InstUsageInput">Water Usage (In Gallons)</label>
+                                    <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
+                                </div>
                             </div>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                            
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateInstBill()">
                                 Calculate
                              </button>
                              <div class=ResultsDiv>
-                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="InstResultText">145.50</b>
+                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="InstResultText"></b>
                              </div>
                 </div>
 
@@ -547,6 +610,108 @@
                     TierValue: 0
                 },
             ]
+        };
+
+        var InstTiers = 
+        {
+            BaseRates:
+            [
+                {
+                    MeterSize: 1,
+                    Rate: 12.15
+                },
+                {
+                    MeterSize: 1.5,
+                    Rate: 15.34
+                },
+                {
+                    MeterSize: 2,
+                    Rate: 19.22
+                },
+                {
+                    MeterSize: 3,
+                    Rate: 29.09
+                },
+                {
+                    MeterSize: 4,
+                    Rate: 74.49
+                },
+                {
+                    MeterSize: 6,
+                    Rate: 164.74
+                },
+                {
+                    MeterSize: 8,
+                    Rate: 200.00
+                },
+            ],
+
+                Tiers:
+                [
+                    {
+                        MaxTier: false,
+                        LowEnd: 0,
+                        HighEnd: 10000,
+                        Price: 1.57,
+                        TierValue: 15.70
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 10000,
+                        HighEnd: 30000,
+                        Price: 1.67,
+                        TierValue: 33.40
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 30000,
+                        HighEnd: 60000,
+                        Price: 1.77,
+                        TierValue: 53.10
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 60000,
+                        HighEnd: 90000,
+                        Price: 1.90,
+                        TierValue: 57.00
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 90000,
+                        HighEnd: 125000,
+                        Price: 2.10,
+                        TierValue: 73.50
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 125000,
+                        HighEnd: 150000,
+                        Price: 2.35,
+                        TierValue: 58.75
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 150000,
+                        HighEnd: 250000,
+                        Price: 2.50,
+                        TierValue: 250.00
+                    },
+                    {
+                        MaxTier: false,
+                        LowEnd: 250000,
+                        HighEnd: 300000,
+                        Price: 3.00,
+                        TierValue: 15.70
+                    },
+                    {
+                        MaxTier: true,
+                        LowEnd: 300000,
+                        HighEnd: 99999999999999999,
+                        Price: 4.00,
+                        TierValue: 0
+                    },
+                ] 
         }
     
         function OnSelectionChanged(selectedItem)
@@ -634,6 +799,112 @@
 
             DisplayElement.textContent = PriceToDisplay.toFixed(2);
         }
+
+        function CalculateCommBill()
+        {
+            var MeterInput = document.getElementById('CommMeterSizeValue');
+            var UsageInput = document.getElementById('CommUsageInput');
+            var Usage = UsageInput.value;
+            var MeterSize = MeterInput.value;
+            var PriceToDisplay = 0;
+            var DisplayElement = document.getElementById("CommResultText");
+
+            if (Usage > 0)
+            {
+
+                for (i = 0; i < CommTiers.Tiers.length; i++)
+                {
+                    if (CommTiers.Tiers[i].MaxTier)
+                    {
+                        if (Usage > CommTiers.Tiers[i].LowEnd)
+                        {
+                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd)/1000;
+                            PriceToDisplay += (TierUsage * CommTiers.Tiers[i].Price);
+                        }
+                    }
+                    else
+                    {
+                        if (Usage > CommTiers.Tiers[i].LowEnd && Usage <= CommTiers.Tiers[i].HighEnd)
+                        {
+                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd)/1000;
+                            PriceToDisplay += (TierUsage * CommTiers.Tiers[i].Price);
+                        }
+                        else
+                        {
+                            if (Usage > CommTiers.Tiers[i].HighEnd)
+                            {
+                                PriceToDisplay += CommTiers.Tiers[i].TierValue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (i = 0; i < CommTiers.BaseRates.length; i++)
+            {
+                if (MeterSize == CommTiers.BaseRates[i].MeterSize)
+                {
+                    PriceToDisplay += CommTiers.BaseRates[i].Rate;
+                }
+            }
+
+            DisplayElement.textContent = PriceToDisplay.toFixed(2);
+            
+        }
+
+
+        function CalculateInstBill()
+        {
+            var MeterInput = document.getElementById('InstMeterSizeValue');
+            var UsageInput = document.getElementById('InstUsageInput');
+            var Usage = UsageInput.value;
+            var MeterSize = MeterInput.value;
+            var PriceToDisplay = 0;
+            var DisplayElement = document.getElementById("InstResultText");
+
+            if (Usage > 0)
+            {
+
+                for (i = 0; i < InstTiers.Tiers.length; i++)
+                {
+                    if (InstTiers.Tiers[i].MaxTier)
+                    {
+                        if (Usage > InstTiers.Tiers[i].LowEnd)
+                        {
+                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd)/1000;
+                            PriceToDisplay += (TierUsage * InstTiers.Tiers[i].Price);
+                        }
+                    }
+                    else
+                    {
+                        if (Usage > InstTiers.Tiers[i].LowEnd && Usage <= InstTiers.Tiers[i].HighEnd)
+                        {
+                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd)/1000;
+                            PriceToDisplay += (TierUsage * InstTiers.Tiers[i].Price);
+                        }
+                        else
+                        {
+                            if (Usage > InstTiers.Tiers[i].HighEnd)
+                            {
+                                PriceToDisplay += InstTiers.Tiers[i].TierValue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            for (i = 0; i < InstTiers.BaseRates.length; i++)
+            {
+                if (MeterSize == InstTiers.BaseRates[i].MeterSize)
+                {
+                    PriceToDisplay += InstTiers.BaseRates[i].Rate;
+                }
+            }
+
+            DisplayElement.textContent = PriceToDisplay.toFixed(2);
+        }
+
+
     
     </script>
 </html>
