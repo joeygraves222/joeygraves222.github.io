@@ -23,105 +23,333 @@
     <body>
 
         <style>
-            .Header
+
+                .Header
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 50px;
+                }
+
+                .Footer
+                {
+                    background-color: #31435e;
+                    margin-top: 75px;
+                    flex-direction: row;
+                    padding: 50px;
+                }
+
+                .HeaderContent
+                {
+                    width: 75%;
+                    text-align: center;
+                }
+
+                .SelectionContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .SelectionInnerContainer
+                {
+                    width: 550px;
+                    height: 250px;
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    align-items: flex-start;
+                }
+
+                .SelectionInnerSubContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 100%;
+                }
+
+                .CalculatorsMainContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                }
+
+                .CalculatorContainer
+                {
+                    width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .UsageInputContainer
+                {
+                    margin-top: 20px;
+                }
+
+                .DualTableContainer
+                {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;;
+                    width: 75%;
+                }
+
+                .ResultsDiv
+                {
+                    margin-top: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .SelectInputContainer
+                {
+                    margin-top: 50px;
+                    width: 75%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 100px;
+                }
+
+                @media screen and (max-width: 1080px)
             {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                padding-top: 50px;
+                
+           
+                .Header
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 50px;
+                }
+
+                .Footer
+                {
+                    background-color: #31435e;
+                    margin-top: 75px;
+                    flex-direction: row;
+                    padding: 50px;
+                }
+
+                .HeaderContent
+                {
+                    width: 75%;
+                    text-align: center;
+                }
+
+                .SelectionContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .SelectionInnerContainer
+                {
+                    width: 550px;
+                    height: 250px;
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+                .SelectionInnerSubContainer
+                {
+                    display: flex;
+                    width: 220px;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 100%;
+                }
+
+                .CalculatorsMainContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                }
+
+                .CalculatorContainer
+                {
+                    width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .UsageInputContainer
+                {
+                    margin-top: 20px;
+                }
+
+                .DualTableContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 75%;
+                    
+                }
+
+                .DualTable
+                {
+                    margin-bottom: 40px;
+                }
+
+                .ResultsDiv
+                {
+                    margin-top: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .SelectInputContainer
+                {
+                    margin-top: 50px;
+                    width: 75%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: flex-start;
+                    margin-bottom: 100px;
+                }
             }
 
-            .Footer
+
+            @media screen and (max-width: 992px)
             {
-                background-color: #31435e;
-                margin-top: 75px;
-                flex-direction: row;
-                padding: 50px;
+                
+           
+                .Header
+                {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding-top: 50px;
+                }
+
+                .Footer
+                {
+                    background-color: #31435e;
+                    margin-top: 75px;
+                    flex-direction: row;
+                    padding: 50px;
+                }
+
+                .HeaderContent
+                {
+                    width: 75%;
+                    text-align: center;
+                }
+
+                .SelectionContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .SelectionInnerContainer
+                {
+                    width: 550px;
+                    height: 250px;
+                    margin-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+
+                .SelectionInnerSubContainer
+                {
+                    display: flex;
+                    width: 220px;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    height: 100%;
+                }
+
+                .CalculatorsMainContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-top: 30px;
+                }
+
+                .CalculatorContainer
+                {
+                    width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .UsageInputContainer
+                {
+                    margin-top: 20px;
+                }
+
+                .DualTableContainer
+                {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 75%;
+                    
+                }
+
+                .DualTable
+                {
+                    margin-bottom: 40px;
+                }
+
+                .ResultsDiv
+                {
+                    margin-top: 15px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .SelectInputContainer
+                {
+                    margin-top: 50px;
+                    width: 75%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 100px;
+                }
             }
 
-            .HeaderContent
-            {
-                width: 75%;
-                text-align: center;
-            }
-
-            .SelectionContainer
-            {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .SelectionInnerContainer
-            {
-                width: 550px;
-                height: 250px;
-                margin-top: 10px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-evenly;
-                align-items: flex-start;
-            }
-
-            .SelectionInnerSubContainer
-            {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                height: 100%;
-            }
-
-            .CalculatorsMainContainer
-            {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                margin-top: 30px;
-            }
-
-            .CalculatorContainer
-            {
-                width: 75%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .UsageInputContainer
-            {
-                margin-top: 20px;
-            }
-
-            .DualTableContainer
-            {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;;
-                width: 75%;
-            }
-
-            .ResultsDiv
-            {
-                margin-top: 15px;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .SelectInputContainer
-            {
-                margin-top: 50px;
-                width: 75%;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: flex-start;
-                margin-bottom: 100px;
-            }
+            
 
         </style>
 
@@ -246,7 +474,7 @@
                         <h4>Commercial Calculator</h4>
                         <div class="DualTableContainer">
 
-                                <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+                                <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
                                     <thead>
                                         <tr>
                                             <th>Meter Size</th>
@@ -285,7 +513,7 @@
                                     </tbody>
                                 </table>
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
                                 <thead>
                                     <tr>
                                         <th>Tiers Per Meter Read</th>
@@ -342,7 +570,7 @@
                         <h4>Institutional Calculator</h4>
                         <div class="DualTableContainer">
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
                                 <thead>
                                     <tr>
                                         <th>Meter Size</th>
@@ -381,7 +609,7 @@
                                 </tbody>
                             </table>
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
                                 <thead>
                                     <tr>
                                         <th>Base Rate</th>
