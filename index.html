@@ -360,7 +360,7 @@
                </a>
                 <h3>Welcome to the North Logan City Water Utilities Calculator</h3>
                 <h6><b>Note:</b> The results given by this calculator are in no way an actual representation of your water bill. This tool is simply meant to provide an estimate for your bill, and any disputes in regards to bills should have no reference back to this tool.</h6>
-           </div>
+            </div>
         </header>
 
         <div class="Body">
@@ -402,8 +402,8 @@
                                 <th>Price Per 1,000 Gallons</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="ResSingleTBody">
+                            <!-- <tr>
                                 <td>$12.15</td>
                                 <td>1 - 10,000 gal</td>
                                 <td>$1.57</td>
@@ -447,7 +447,7 @@
                                 <td></td>
                                 <td>300,001 +</td>
                                 <td>$4.00</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                     <div class="mdl-textfield mdl-js-textfield UsageInputContainer">
@@ -479,8 +479,8 @@
                                 <th>Price Per 1,000 Gallons</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
+                        <tbody id="ResMultiTBody">
+                            <!-- <tr>
                                 <td>$7.11</td>
                                 <td>1 - 500,000 gal</td>
                                 <td>$2.25</td>
@@ -529,7 +529,7 @@
                                 <td></td>
                                 <td>5,000,001 +</td>
                                 <td>$4.25</td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                     <div class=SelectInputContainer>
@@ -564,8 +564,8 @@
                                             <th>Base Rate</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        <tr>
+                                    <tbody id="CommSizeTBody">
+                                        <!-- <tr>
                                             <td>1" or Smaller</td>
                                             <td>$12.15</td>
                                         </tr>
@@ -592,7 +592,7 @@
                                         <tr>
                                             <td>8"</td>
                                             <td>$200.00</td>
-                                        </tr>
+                                        </tr> -->
                                     </tbody>
                                 </table>
 
@@ -603,8 +603,8 @@
                                         <th>Price Per 1,000 Gallons</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody id="CommRateTBody">
+                                    <!-- <tr>
                                         <td>1 - 1,500,000 gal</td>
                                         <td>$1.60</td>
                                     </tr>
@@ -615,7 +615,7 @@
                                     <tr>
                                         <td>2,000,001 + gal</td>
                                         <td>$3.85</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
@@ -660,8 +660,8 @@
                                         <th>Base Rate</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody id="InstSizeTBody">
+                                    <!-- <tr>
                                         <td>1" or Smaller</td>
                                         <td>$12.15</td>
                                     </tr>
@@ -688,7 +688,7 @@
                                     <tr>
                                         <td>8"</td>
                                         <td>$200.00</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
 
@@ -700,8 +700,8 @@
                                         <th>Price Per 1,000 Gallons</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody id="InstRateTBody">
+                                    <!-- <tr>
                                         <td>$12.15</td>
                                         <td>1 - 10,000 gal</td>
                                         <td>$1.57</td>
@@ -745,7 +745,7 @@
                                         <td></td>
                                         <td>300,001 +</td>
                                         <td>$4.00</td>
-                                    </tr>
+                                    </tr> -->
                                        
                                 </tbody>
                             </table>
@@ -792,316 +792,16 @@
 
     <script>
 
-        var ResSingleTiers = 
-        {
-            BaseRate: 12.15,
-            Tiers:
-            [
-                {
-                    MaxTier: false,
-                    LowEnd: 0,
-                    HighEnd: 10000,
-                    Price: 1.57,
-                    TierValue: 15.70
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 10000,
-                    HighEnd: 30000,
-                    Price: 1.67,
-                    TierValue: 33.40
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 30000,
-                    HighEnd: 60000,
-                    Price: 1.77,
-                    TierValue: 53.10
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 60000,
-                    HighEnd: 90000,
-                    Price: 1.90,
-                    TierValue: 57.00
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 90000,
-                    HighEnd: 125000,
-                    Price: 2.10,
-                    TierValue: 73.50
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 125000,
-                    HighEnd: 150000,
-                    Price: 2.35,
-                    TierValue: 58.75
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 150000,
-                    HighEnd: 250000,
-                    Price: 2.50,
-                    TierValue: 250.00
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 250000,
-                    HighEnd: 300000,
-                    Price: 3.00,
-                    TierValue: 150.00,
-                },
-                {
-                    MaxTier: true,
-                    LowEnd: 300000,
-                    HighEnd: 99999999999999999,
-                    Price: 4.00,
-                    TierValue: 0
-                },
-            ]
-        };
+        let ResSingleTiers = {};
+        
 
-        var ResMultiTiers = 
-        {
-            BaseRate: 7.11,
-            Tiers:
-            [
-                {
-                    MaxTier: false,
-                    LowEnd: 0,
-                    HighEnd: 500000,
-                    Price: 2.25,
-                    TierValue: 1125.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 500000,
-                    HighEnd: 1000000,
-                    Price: 2.35,
-                    TierValue: 1175.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 1000000,
-                    HighEnd: 1500000,
-                    Price: 2.40,
-                    TierValue: 1200.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 1500000,
-                    HighEnd: 2000000,
-                    Price: 2.45,
-                    TierValue: 1225.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 2000000,
-                    HighEnd: 2500000,
-                    Price: 2.50,
-                    TierValue: 1250.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 2500000,
-                    HighEnd: 3000000,
-                    Price: 2.55,
-                    TierValue: 1275.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 3000000,
-                    HighEnd: 3500000,
-                    Price: 2.60,
-                    TierValue: 1300.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 3500000,
-                    HighEnd: 4000000,
-                    Price: 2.85,
-                    TierValue: 1425.00,
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 4000000,
-                    HighEnd: 5000000,
-                    Price: 3.55,
-                    TierValue: 1775.00,
-                },
-                {
-                    MaxTier: true,
-                    LowEnd: 5000000,
-                    HighEnd: 99999999999999999,
-                    Price: 4.25,
-                    TierValue: 0
-                },
-            ]
-        };
+        let ResMultiTiers = {};
+        
+        let CommTiers = {};
+        
 
-        var CommTiers = 
-        {
-            BaseRates:
-            [
-                {
-                    MeterSize: 1,
-                    Rate: 12.15
-                },
-                {
-                    MeterSize: 1.5,
-                    Rate: 15.34
-                },
-                {
-                    MeterSize: 2,
-                    Rate: 19.22
-                },
-                {
-                    MeterSize: 3,
-                    Rate: 29.09
-                },
-                {
-                    MeterSize: 4,
-                    Rate: 74.49
-                },
-                {
-                    MeterSize: 6,
-                    Rate: 164.74
-                },
-                {
-                    MeterSize: 8,
-                    Rate: 200.00
-                },
-
-            ], 
-            Tiers:
-            [
-                {
-                    MaxTier: false,
-                    LowEnd: 0,
-                    HighEnd: 1500000,
-                    Price: 1.60,
-                    TierValue: 2400.00
-                },
-                {
-                    MaxTier: false,
-                    LowEnd: 1500000,
-                    HighEnd: 2000000,
-                    Price: 1.95,
-                    TierValue: 975.00
-                },
-                {
-                    MaxTier: true,
-                    LowEnd: 2000000,
-                    HighEnd: 99999999999999999,
-                    Price: 3.85,
-                    TierValue: 0
-                },
-            ]
-        };
-
-        var InstTiers = 
-        {
-            BaseRates:
-            [
-                {
-                    MeterSize: 1,
-                    Rate: 12.15
-                },
-                {
-                    MeterSize: 1.5,
-                    Rate: 15.34
-                },
-                {
-                    MeterSize: 2,
-                    Rate: 19.22
-                },
-                {
-                    MeterSize: 3,
-                    Rate: 29.09
-                },
-                {
-                    MeterSize: 4,
-                    Rate: 74.49
-                },
-                {
-                    MeterSize: 6,
-                    Rate: 164.74
-                },
-                {
-                    MeterSize: 8,
-                    Rate: 200.00
-                },
-            ],
-
-                Tiers:
-                [
-                    {
-                        MaxTier: false,
-                        LowEnd: 0,
-                        HighEnd: 10000,
-                        Price: 1.57,
-                        TierValue: 15.70
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 10000,
-                        HighEnd: 30000,
-                        Price: 1.67,
-                        TierValue: 33.40
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 30000,
-                        HighEnd: 60000,
-                        Price: 1.77,
-                        TierValue: 53.10
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 60000,
-                        HighEnd: 90000,
-                        Price: 1.90,
-                        TierValue: 57.00
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 90000,
-                        HighEnd: 125000,
-                        Price: 2.10,
-                        TierValue: 73.50
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 125000,
-                        HighEnd: 150000,
-                        Price: 2.35,
-                        TierValue: 58.75
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 150000,
-                        HighEnd: 250000,
-                        Price: 2.50,
-                        TierValue: 250.00
-                    },
-                    {
-                        MaxTier: false,
-                        LowEnd: 250000,
-                        HighEnd: 300000,
-                        Price: 3.00,
-                        TierValue: 150.00
-                    },
-                    {
-                        MaxTier: true,
-                        LowEnd: 300000,
-                        HighEnd: 99999999999999999,
-                        Price: 4.00,
-                        TierValue: 0
-                    },
-                ] 
-        }
+        let InstTiers = {};
+        
     
         function OnSelectionChanged(selectedItem)
         {
@@ -1353,6 +1053,305 @@
         }
 
 
+        async function GetFromFirebase()
+        {
+            var resSingleDone = false;
+            var resMultiDone = false;
+            var commDone = false;
+            var instDone = false;
+            var resSinglexhr = new XMLHttpRequest();
+            resSinglexhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/ResSingleRates.json', true);
+            resSinglexhr.onload = function()
+            {
+                var result = JSON.parse(this.responseText);
+                ResSingleTiers = result.Base;
+                //buildResSingleTable();
+                resSingleDone = true;
+            };
+
+
+            var resMultixhr = new XMLHttpRequest();
+            resMultixhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/ResMultiRates.json', true);
+            resMultixhr.onload = function()
+            {
+                var result = JSON.parse(this.responseText);
+                ResMultiTiers = result.Base;
+                //buildResMultiTable();
+                resMultiDone = true;
+            };
+
+
+            var commxhr = new XMLHttpRequest();
+            commxhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/CommRates.json', true);
+            commxhr.onload = function()
+            {
+                var result = JSON.parse(this.responseText);
+                CommTiers = result.Base;
+                //buildCommTables();
+                commDone = true;
+            };
+
+
+            var instxhr = new XMLHttpRequest();
+            instxhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/InstRates.json', true);
+            instxhr.onload = function()
+            {
+                var result = JSON.parse(this.responseText);
+                InstTiers = result.Base;
+                //buildInstTables();
+                instDone = true;
+            };
+
+
+
+            resSinglexhr.send(JSON.stringify(ResSingleTiers));
+            resMultixhr.send(JSON.stringify(ResMultiTiers));
+            commxhr.send(JSON.stringify(CommTiers));
+            instxhr.send(JSON.stringify(InstTiers));
+
+            while(!resSingleDone && !resMultiDone && !commDone && !instDone)
+            {
+                await sleep(500);
+            }
+
+            buildResSingleTable();
+            buildResMultiTable();
+            buildCommTables();
+            buildInstTables();
+        }
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function buildResSingleTable()
+        {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+                //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+                });
+
+            var tableBody = document.getElementById('ResSingleTBody');
+
+            for (i = 0; i < ResSingleTiers.Tiers.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+                var col3 = document.createElement('td');
+
+                if (i == 0)
+                {
+                    col1.innerText = formatter.format(ResSingleTiers.BaseRate);
+                }
+                var newMinValue = ResSingleTiers.Tiers[i].LowEnd + 1;
+                
+
+                if (i < ResSingleTiers.Tiers.length -1)
+                {
+                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResSingleTiers.Tiers[i].HighEnd); 
+                }
+                else{
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
+                }
+                
+                col3.innerText = formatter.format(ResSingleTiers.Tiers[i].Price);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+                row.appendChild(col3);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function buildResMultiTable()
+        {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+                //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+                });
+
+            var tableBody = document.getElementById('ResMultiTBody');
+
+            for (i = 0; i < ResMultiTiers.Tiers.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+                var col3 = document.createElement('td');
+
+                if (i == 0)
+                {
+                    col1.innerText = formatter.format(ResMultiTiers.BaseRate);
+                }
+                var newMinValue = ResMultiTiers.Tiers[i].LowEnd + 1;
+                
+
+                if (i < ResMultiTiers.Tiers.length -1)
+                {
+                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResMultiTiers.Tiers[i].HighEnd); 
+                }
+                else{
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
+                }
+                
+                col3.innerText = formatter.format(ResMultiTiers.Tiers[i].Price);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+                row.appendChild(col3);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function buildCommTables()
+        {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+                //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+                });
+
+            var sizeTableBody = document.getElementById('CommSizeTBody');
+            var rateTableBody = document.getElementById('CommRateTBody');
+
+            for (i = 0; i < CommTiers.BaseRates.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+
+                if (i == 0)
+                {
+                    col1.innerText = CommTiers.BaseRates[i].MeterSize + '" Or Smaller';
+                }
+                else{
+                    col1.innerText = CommTiers.BaseRates[i].MeterSize + '"';
+                }
+
+                col2.innerText = formatter.format(CommTiers.BaseRates[i].Rate);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+
+                sizeTableBody.appendChild(row);
+            }
+
+            for (i = 0; i < CommTiers.Tiers.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+
+                var newMinValue = CommTiers.Tiers[i].LowEnd + 1;
+
+                if (i < CommTiers.Tiers.length -1)
+                {
+                   col1.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(CommTiers.Tiers[i].HighEnd); 
+                }
+                else{
+                    col1.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
+                }
+
+                col2.innerText = formatter.format(CommTiers.Tiers[i].Price);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+
+                rateTableBody.appendChild(row);
+            }
+        }
+
+        function buildInstTables()
+        {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+                //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+                });
+
+            var sizeTableBody = document.getElementById('InstSizeTBody');
+            var rateTableBody = document.getElementById('InstRateTBody');
+
+            for (i = 0; i < InstTiers.BaseRates.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+
+                if (i == 0)
+                {
+                    col1.innerText = InstTiers.BaseRates[i].MeterSize + '" Or Smaller';
+                }
+                else{
+                    col1.innerText = InstTiers.BaseRates[i].MeterSize + '"';
+                }
+
+                col2.innerText = formatter.format(ResSingleTiers.BaseRate);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+
+                sizeTableBody.appendChild(row);
+            }
+
+            for (i = 0; i < InstTiers.Tiers.length; i++)
+            {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+                var col3 = document.createElement('td');
+
+                if (i == 0)
+                {
+                    col1.innerText = formatter.format(ResSingleTiers.BaseRate);
+                }
+
+                var newMinValue = InstTiers.Tiers[i].LowEnd + 1;
+
+                if (i < InstTiers.Tiers.length -1)
+                {
+                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(InstTiers.Tiers[i].HighEnd); 
+                }
+                else{
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
+                }
+
+                col3.innerText = formatter.format(InstTiers.Tiers[i].Price);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+                row.appendChild(col3);
+
+                rateTableBody.appendChild(row);
+            }
+        }
     
+
+        window.onload = function(){
+            GetFromFirebase();
+        };
     </script>
 </html>
