@@ -377,6 +377,10 @@
                             <input type="radio" id="option-2" class="mdl-radio__button" value="ResMulti" onclick="OnSelectionChanged(this)" name="Type">
                             <span class="mdl-radio__label">Residential (Multi-Family)</span>
                         </label>
+                        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+                            <input type="radio" id="option-5" class="mdl-radio__button" value="AptMulti" onclick="OnSelectionChanged(this)" name="Type">
+                            <span class="mdl-radio__label">Apartment/Multi-Unit</span>
+                        </label>
                     </div>
                     <div class=SelectionInnerSubContainer>
                         <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
@@ -388,6 +392,7 @@
                             <span class="mdl-radio__label">Institutional</span>
                         </label>
                     </div>
+
                 </div>
             </div>
 
@@ -404,50 +409,50 @@
                         </thead>
                         <tbody id="ResSingleTBody">
                             <!-- <tr>
-                                <td>$12.15</td>
-                                <td>1 - 10,000 gal</td>
-                                <td>$1.57</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>10,001 - 30,000 gal</td>
-                                <td>$1.67</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>30,001 - 60,000 gal</td>
-                                <td>$1.77</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>60,001 - 90,000 gal</td>
-                                <td>$1.90</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>90,001 - 125,000 gal</td>
-                                <td>$2.10</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>125,001 - 150,000 gal</td>
-                                <td>$2.35</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>150,001 - 250,000 gal</td>
-                                <td>$2.50</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>250,001 - 300,000 gal</td>
-                                <td>$3.00</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>300,001 +</td>
-                                <td>$4.00</td>
-                            </tr> -->
+                    <td>$12.15</td>
+                    <td>1 - 10,000 gal</td>
+                    <td>$1.57</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>10,001 - 30,000 gal</td>
+                    <td>$1.67</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>30,001 - 60,000 gal</td>
+                    <td>$1.77</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>60,001 - 90,000 gal</td>
+                    <td>$1.90</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>90,001 - 125,000 gal</td>
+                    <td>$2.10</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>125,001 - 150,000 gal</td>
+                    <td>$2.35</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>150,001 - 250,000 gal</td>
+                    <td>$2.50</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>250,001 - 300,000 gal</td>
+                    <td>$3.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>300,001 +</td>
+                    <td>$4.00</td>
+                </tr> -->
                         </tbody>
                     </table>
                     <div class="mdl-textfield mdl-js-textfield UsageInputContainer">
@@ -457,20 +462,20 @@
                     </div>
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateResSingleBill()">
                         Calculate
-                     </button>
-                     <div class=ResultsDiv>
+                    </button>
+                    <div class=ResultsDiv>
                         <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="ResSingleResultText"></b>
-                     </div>
+                    </div>
                 </div>
 
                 <div id="ResMultiCalcCont" class="CalculatorContainer" hidden>
-                        <!-- <h4>Residential Multi Family Calculator</h4>
-                        <div>
-                            <h3>Utilities under this category typically involve multiple units to calculate at a time, so for info on water bills under this category, please contact <a href="mailto:jordan@northlogancity.org">Jordan</a>.</h3>
-                        </div> -->
+                    <!-- <h4>Residential Multi Family Calculator</h4>
+        <div>
+            <h3>Utilities under this category typically involve multiple units to calculate at a time, so for info on water bills under this category, please contact <a href="mailto:jordan@northlogancity.org">Jordan</a>.</h3>
+        </div> -->
 
-                        <h4>Residential Multi Family Calculator</h4>
-                        <p><strong>Note:</strong> This category is calculated based on the total amount used by all units. If you live in a complex or HOA, and your utility bill comes from the owner or HOA, then you shouldn't try to calculate your bill here.</p>
+                    <h4>Residential Multi Family Calculator</h4>
+                    <p><strong>Note:</strong> This category is calculated based on the total amount used by all units. If you live in a complex or HOA, and your utility bill comes from the owner or HOA, then you shouldn't try to calculate your bill here.</p>
                     <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
                         <thead>
                             <tr>
@@ -481,55 +486,55 @@
                         </thead>
                         <tbody id="ResMultiTBody">
                             <!-- <tr>
-                                <td>$7.11</td>
-                                <td>1 - 500,000 gal</td>
-                                <td>$2.25</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>500,001 - 1,000,000 gal</td>
-                                <td>$2.35</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>1,000,001 - 1,500,000 gal</td>
-                                <td>$2.40</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>1,500,001 - 2,000,000 gal</td>
-                                <td>$2.45</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>2,000,001 - 2,500,000 gal</td>
-                                <td>$2.50</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>2,500,001 - 3,000,000 gal</td>
-                                <td>$2.55</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>3,000,001 - 3,500,000 gal</td>
-                                <td>$2.60</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>3,500,001 - 4,000,000 gal</td>
-                                <td>$2.85</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>4,000,001 - 5,000,000 gal</td>
-                                <td>$3.55</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>5,000,001 +</td>
-                                <td>$4.25</td>
-                            </tr> -->
+                    <td>$7.11</td>
+                    <td>1 - 500,000 gal</td>
+                    <td>$2.25</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>500,001 - 1,000,000 gal</td>
+                    <td>$2.35</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1,000,001 - 1,500,000 gal</td>
+                    <td>$2.40</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>1,500,001 - 2,000,000 gal</td>
+                    <td>$2.45</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2,000,001 - 2,500,000 gal</td>
+                    <td>$2.50</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>2,500,001 - 3,000,000 gal</td>
+                    <td>$2.55</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3,000,001 - 3,500,000 gal</td>
+                    <td>$2.60</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>3,500,001 - 4,000,000 gal</td>
+                    <td>$2.85</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>4,000,001 - 5,000,000 gal</td>
+                    <td>$3.55</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>5,000,001 +</td>
+                    <td>$4.25</td>
+                </tr> -->
                         </tbody>
                     </table>
                     <div class=SelectInputContainer>
@@ -547,79 +552,150 @@
                     </div>
                     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateResMultiBill()">
                         Calculate
-                     </button>
-                     <div class=ResultsDiv>
+                    </button>
+                    <div class=ResultsDiv>
                         <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="ResMultiResultText"></b>
-                     </div>
+                    </div>
+                </div>
+
+                <div id="AptMultiCalcCont" class="CalculatorContainer">
+                    <h4>Apartment/Multi-Unit Calculator</h4>
+                    <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
+                        <thead>
+                            <tr>
+                                <th>Base Rate</th>
+                                <th>Tiers Per Meter Read</th>
+                                <th>Price Per 1,000 Gallons</th>
+                            </tr>
+                        </thead>
+                        <tbody id="AptMultiTBody">
+                            <!-- <tr>
+                    <td>$12.15</td>
+                    <td>1 - 10,000 gal</td>
+                    <td>$1.57</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>10,001 - 30,000 gal</td>
+                    <td>$1.67</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>30,001 - 60,000 gal</td>
+                    <td>$1.77</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>60,001 - 90,000 gal</td>
+                    <td>$1.90</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>90,001 - 125,000 gal</td>
+                    <td>$2.10</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>125,001 - 150,000 gal</td>
+                    <td>$2.35</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>150,001 - 250,000 gal</td>
+                    <td>$2.50</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>250,001 - 300,000 gal</td>
+                    <td>$3.00</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>300,001 +</td>
+                    <td>$4.00</td>
+                </tr> -->
+                        </tbody>
+                    </table>
+                    <div class="mdl-textfield mdl-js-textfield UsageInputContainer">
+                        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="AptMultiUsageInput">
+                        <label class="mdl-textfield__label" for="AptMultiUsageInput">Water Usage (In Gallons)</label>
+                        <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateAptMultiBill()">
+                        Calculate
+                    </button>
+                    <div class=ResultsDiv>
+                        <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="AptMultiResultText"></b>
+                    </div>
                 </div>
 
                 <div id="CommCalcCont" class="CalculatorContainer" hidden>
-                        <h4>Commercial Calculator</h4>
-                        <div class="DualTableContainer">
+                    <h4>Commercial Calculator</h4>
+                    <div class="DualTableContainer">
 
-                                <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
-                                    <thead>
-                                        <tr>
-                                            <th>Meter Size</th>
-                                            <th>Base Rate</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="CommSizeTBody">
-                                        <!-- <tr>
-                                            <td>1" or Smaller</td>
-                                            <td>$12.15</td>
-                                        </tr>
-                                        <tr>
-                                            <td>1<sup>1</sup>&frasl;<sub>2</sub>"</td>
-                                            <td>$15.34</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2"</td>
-                                            <td>$19.22</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3"</td>
-                                            <td>$29.09</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4"</td>
-                                            <td>$74.49</td>
-                                        </tr>
-                                        <tr>
-                                            <td>6"</td>
-                                            <td>$164.74</td>
-                                        </tr>
-                                        <tr>
-                                            <td>8"</td>
-                                            <td>$200.00</td>
-                                        </tr> -->
-                                    </tbody>
-                                </table>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
+                            <thead>
+                                <tr>
+                                    <th>Meter Size</th>
+                                    <th>Base Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody id="CommSizeTBody">
+                                <!-- <tr>
+                        <td>1" or Smaller</td>
+                        <td>$12.15</td>
+                    </tr>
+                    <tr>
+                        <td>1<sup>1</sup>&frasl;<sub>2</sub>"</td>
+                        <td>$15.34</td>
+                    </tr>
+                    <tr>
+                        <td>2"</td>
+                        <td>$19.22</td>
+                    </tr>
+                    <tr>
+                        <td>3"</td>
+                        <td>$29.09</td>
+                    </tr>
+                    <tr>
+                        <td>4"</td>
+                        <td>$74.49</td>
+                    </tr>
+                    <tr>
+                        <td>6"</td>
+                        <td>$164.74</td>
+                    </tr>
+                    <tr>
+                        <td>8"</td>
+                        <td>$200.00</td>
+                    </tr> -->
+                            </tbody>
+                        </table>
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
-                                <thead>
-                                    <tr>
-                                        <th>Tiers Per Meter Read</th>
-                                        <th>Price Per 1,000 Gallons</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="CommRateTBody">
-                                    <!-- <tr>
-                                        <td>1 - 1,500,000 gal</td>
-                                        <td>$1.60</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1,500,001 - 2,000,000 gal</td>
-                                        <td>$1.95</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2,000,001 + gal</td>
-                                        <td>$3.85</td>
-                                    </tr> -->
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="SelectInputContainer">
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
+                            <thead>
+                                <tr>
+                                    <th>Tiers Per Meter Read</th>
+                                    <th>Price Per 1,000 Gallons</th>
+                                </tr>
+                            </thead>
+                            <tbody id="CommRateTBody">
+                                <!-- <tr>
+                        <td>1 - 1,500,000 gal</td>
+                        <td>$1.60</td>
+                    </tr>
+                    <tr>
+                        <td>1,500,001 - 2,000,000 gal</td>
+                        <td>$1.95</td>
+                    </tr>
+                    <tr>
+                        <td>2,000,001 + gal</td>
+                        <td>$3.85</td>
+                    </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="SelectInputContainer">
                         <div class="mdl-textfield mdl-js-textfield getmdl-select">
                             <input type="text" value="" class="mdl-textfield__input" id="CommMeterSize" readonly>
                             <input type="hidden" value="" id="CommMeterSizeValue" name="CommMeterSize">
@@ -635,151 +711,151 @@
                                 <li class="mdl-menu__item" data-val="8">8"</li>
                             </ul>
                         </div>
-                            <div class="mdl-textfield mdl-js-textfield">
-                                <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="CommUsageInput">
-                                <label class="mdl-textfield__label" for="CommUsageInput">Water Usage (In Gallons)</label>
-                                <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
-                            </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="CommUsageInput">
+                            <label class="mdl-textfield__label" for="CommUsageInput">Water Usage (In Gallons)</label>
+                            <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
                         </div>
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateCommBill()">
-                                Calculate
-                             </button>
-                             <div class=ResultsDiv>
-                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="CommResultText"></b>
-                             </div>
+                    </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateCommBill()">
+                        Calculate
+                    </button>
+                    <div class=ResultsDiv>
+                        <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="CommResultText"></b>
+                    </div>
                 </div>
 
                 <div id="InstCalcCont" class="CalculatorContainer" hidden>
-                        <h4>Institutional Calculator</h4>
-                        <div class="DualTableContainer">
+                    <h4>Institutional Calculator</h4>
+                    <div class="DualTableContainer">
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
-                                <thead>
-                                    <tr>
-                                        <th>Meter Size</th>
-                                        <th>Base Rate</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="InstSizeTBody">
-                                    <!-- <tr>
-                                        <td>1" or Smaller</td>
-                                        <td>$12.15</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1<sup>1</sup>&frasl;<sub>2</sub>"</td>
-                                        <td>$15.34</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2"</td>
-                                        <td>$19.22</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3"</td>
-                                        <td>$29.09</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4"</td>
-                                        <td>$74.49</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6"</td>
-                                        <td>$164.74</td>
-                                    </tr>
-                                    <tr>
-                                        <td>8"</td>
-                                        <td>$200.00</td>
-                                    </tr> -->
-                                </tbody>
-                            </table>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
+                            <thead>
+                                <tr>
+                                    <th>Meter Size</th>
+                                    <th>Base Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody id="InstSizeTBody">
+                                <!-- <tr>
+                        <td>1" or Smaller</td>
+                        <td>$12.15</td>
+                    </tr>
+                    <tr>
+                        <td>1<sup>1</sup>&frasl;<sub>2</sub>"</td>
+                        <td>$15.34</td>
+                    </tr>
+                    <tr>
+                        <td>2"</td>
+                        <td>$19.22</td>
+                    </tr>
+                    <tr>
+                        <td>3"</td>
+                        <td>$29.09</td>
+                    </tr>
+                    <tr>
+                        <td>4"</td>
+                        <td>$74.49</td>
+                    </tr>
+                    <tr>
+                        <td>6"</td>
+                        <td>$164.74</td>
+                    </tr>
+                    <tr>
+                        <td>8"</td>
+                        <td>$200.00</td>
+                    </tr> -->
+                            </tbody>
+                        </table>
 
-                            <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
-                                <thead>
-                                    <tr>
-                                        <th>Base Rate</th>
-                                        <th>Tiers Per Meter Read</th>
-                                        <th>Price Per 1,000 Gallons</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="InstRateTBody">
-                                    <!-- <tr>
-                                        <td>$12.15</td>
-                                        <td>1 - 10,000 gal</td>
-                                        <td>$1.57</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>10,001 - 30,000 gal</td>
-                                        <td>$1.67</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>30,001 - 60,000 gal</td>
-                                        <td>$1.77</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>60,001 - 90,000 gal</td>
-                                        <td>$1.90</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>90,001 - 125,000 gal</td>
-                                        <td>$2.10</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>125,001 - 150,000 gal</td>
-                                        <td>$2.35</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>150,001 - 250,000 gal</td>
-                                        <td>$2.50</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>250,001 - 300,000 gal</td>
-                                        <td>$3.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td>300,001 +</td>
-                                        <td>$4.00</td>
-                                    </tr> -->
-                                       
-                                </tbody>
-                            </table>
+                        <table class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp DualTable">
+                            <thead>
+                                <tr>
+                                    <th>Base Rate</th>
+                                    <th>Tiers Per Meter Read</th>
+                                    <th>Price Per 1,000 Gallons</th>
+                                </tr>
+                            </thead>
+                            <tbody id="InstRateTBody">
+                                <!-- <tr>
+                        <td>$12.15</td>
+                        <td>1 - 10,000 gal</td>
+                        <td>$1.57</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>10,001 - 30,000 gal</td>
+                        <td>$1.67</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>30,001 - 60,000 gal</td>
+                        <td>$1.77</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>60,001 - 90,000 gal</td>
+                        <td>$1.90</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>90,001 - 125,000 gal</td>
+                        <td>$2.10</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>125,001 - 150,000 gal</td>
+                        <td>$2.35</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>150,001 - 250,000 gal</td>
+                        <td>$2.50</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>250,001 - 300,000 gal</td>
+                        <td>$3.00</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>300,001 +</td>
+                        <td>$4.00</td>
+                    </tr> -->
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="SelectInputContainer">
+                        <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                            <input type="text" value="" class="mdl-textfield__input" id="InstMeterSize" readonly>
+                            <input type="hidden" value="" id="InstMeterSizeValue" name="InstMeterSize">
+                            <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
+                            <label for="InstMeterSize" class="mdl-textfield__label">Meter Size</label>
+                            <ul for="InstMeterSize" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                                <li class="mdl-menu__item" data-val="1">1" or Smaller</li>
+                                <li class="mdl-menu__item" data-val="1.5">1<sup>1</sup>&frasl;<sub>2</sub>"</li>
+                                <li class="mdl-menu__item" data-val="2">2"</li>
+                                <li class="mdl-menu__item" data-val="3">3"</li>
+                                <li class="mdl-menu__item" data-val="4">4"</li>
+                                <li class="mdl-menu__item" data-val="6">6"</li>
+                                <li class="mdl-menu__item" data-val="8">8"</li>
+                            </ul>
                         </div>
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="InstUsageInput">
+                            <label class="mdl-textfield__label" for="InstUsageInput">Water Usage (In Gallons)</label>
+                            <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
+                        </div>
+                    </div>
 
-                        <div class="SelectInputContainer">
-                                <div class="mdl-textfield mdl-js-textfield getmdl-select">
-                                    <input type="text" value="" class="mdl-textfield__input" id="InstMeterSize" readonly>
-                                    <input type="hidden" value="" id="InstMeterSizeValue" name="InstMeterSize">
-                                    <i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-                                    <label for="InstMeterSize" class="mdl-textfield__label">Meter Size</label>
-                                    <ul for="InstMeterSize" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                        <li class="mdl-menu__item" data-val="1">1" or Smaller</li>
-                                        <li class="mdl-menu__item" data-val="1.5">1<sup>1</sup>&frasl;<sub>2</sub>"</li>
-                                        <li class="mdl-menu__item" data-val="2">2"</li>
-                                        <li class="mdl-menu__item" data-val="3">3"</li>
-                                        <li class="mdl-menu__item" data-val="4">4"</li>
-                                        <li class="mdl-menu__item" data-val="6">6"</li>
-                                        <li class="mdl-menu__item" data-val="8">8"</li>
-                                    </ul>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" id="InstUsageInput">
-                                    <label class="mdl-textfield__label" for="InstUsageInput">Water Usage (In Gallons)</label>
-                                    <span class="mdl-textfield__error">Whole Numbers Only Please!</span>
-                                </div>
-                            </div>
-                            
-                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateInstBill()">
-                                Calculate
-                             </button>
-                             <div class=ResultsDiv>
-                                <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="InstResultText"></b>
-                             </div>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="CalculateInstBill()">
+                        Calculate
+                    </button>
+                    <div class=ResultsDiv>
+                        <label>You owe approximately: </label><i class="material-icons">attach_money</i><b id="InstResultText"></b>
+                    </div>
                 </div>
 
             </div>
@@ -796,6 +872,8 @@
         
 
         let ResMultiTiers = {};
+
+        let AptMultiTiers = {};
         
         let CommTiers = {};
         
@@ -807,6 +885,7 @@
         {
             var ResSingle = document.getElementById('ResSingleCalcCont');
             var ResMulti = document.getElementById('ResMultiCalcCont');
+            var AptMulti = document.getElementById('AptMultiCalcCont');
             var Comm = document.getElementById('CommCalcCont');
             var Inst = document.getElementById('InstCalcCont');
 
@@ -818,6 +897,7 @@
                 ResMulti.hidden = true;
                 Comm.hidden = true;
                 Inst.hidden = true;
+                AptMulti.hidden = true;
             }
             else if (value === "ResMulti")
             {
@@ -825,6 +905,15 @@
                 ResMulti.hidden = false;
                 Comm.hidden = true;
                 Inst.hidden = true;
+                AptMulti.hidden = true;
+            }
+            else if (value === "AptMulti")
+            {
+                ResSingle.hidden = true;
+                ResMulti.hidden = true;
+                Comm.hidden = true;
+                Inst.hidden = true;
+                AptMulti.hidden = false;
             }
             else if (value === "Comm")
             {
@@ -832,6 +921,7 @@
                 ResMulti.hidden = true;
                 Comm.hidden = false;
                 Inst.hidden = true;
+                AptMulti.hidden = true;
             }
             else
             {
@@ -839,6 +929,7 @@
                 ResMulti.hidden = true;
                 Comm.hidden = true;
                 Inst.hidden = false;
+                AptMulti.hidden = true;
             }
         }
 
@@ -885,6 +976,43 @@
                 
             }
             PriceToDisplay += ResSingleTiers.BaseRate;
+
+            DisplayElement.textContent = PriceToDisplay.toFixed(2);
+        }
+
+        function CalculateAptMultiBill() {
+            var input = document.getElementById('AptMultiUsageInput');
+            var DisplayElement = document.getElementById('AptMultiResultText')
+            var Usage = input.value;
+            var PriceToDisplay = 0;
+            if (Usage > 0) {
+
+
+
+
+                for (i = 0; i < AptMultiTiers.Tiers.length; i++) {
+                    if (AptMultiTiers.Tiers[i].MaxTier) {
+                        if (Usage > AptMultiTiers.Tiers[i].LowEnd) {
+                            var TierUsage = (Usage - AptMultiTiers.Tiers[i].LowEnd) / 1000;
+                            PriceToDisplay += (TierUsage * AptMultiTiers.Tiers[i].Price);
+                        }
+                    }
+                    else {
+                        if (Usage > AptMultiTiers.Tiers[i].LowEnd && Usage <= AptMultiTiers.Tiers[i].HighEnd) {
+                            var TierUsage = (Usage - AptMultiTiers.Tiers[i].LowEnd) / 1000;
+                            PriceToDisplay += (TierUsage * AptMultiTiers.Tiers[i].Price);
+                        }
+                        else {
+                            if (Usage > AptMultiTiers.Tiers[i].HighEnd) {
+                                PriceToDisplay += AptMultiTiers.Tiers[i].TierValue;
+                            }
+                        }
+                    }
+                }
+
+
+            }
+            PriceToDisplay += AptMultiTiers.BaseRate;
 
             DisplayElement.textContent = PriceToDisplay.toFixed(2);
         }
@@ -1057,6 +1185,7 @@
         {
             var resSingleDone = false;
             var resMultiDone = false;
+            var aptMultiDone = false;
             var commDone = false;
             var instDone = false;
             var resSinglexhr = new XMLHttpRequest();
@@ -1078,6 +1207,15 @@
                 ResMultiTiers = result.Base;
                 //buildResMultiTable();
                 resMultiDone = true;
+            };
+
+            var aptMultixhr = new XMLHttpRequest();
+            aptMultixhr.open('GET', 'https://tieredwaterrates-default-rtdb.firebaseio.com/AptMultiRates.json', true);
+            aptMultixhr.onload = function () {
+                var result = JSON.parse(this.responseText);
+                AptMultiTiers = result.Base;
+                //buildResMultiTable();
+                aptMultiDone = true;
             };
 
 
@@ -1106,16 +1244,18 @@
 
             resSinglexhr.send(JSON.stringify(ResSingleTiers));
             resMultixhr.send(JSON.stringify(ResMultiTiers));
+            aptMultixhr.send(JSON.stringify(AptMultiTiers));
             commxhr.send(JSON.stringify(CommTiers));
             instxhr.send(JSON.stringify(InstTiers));
 
-            while(!resSingleDone && !resMultiDone && !commDone && !instDone)
+            while(!resSingleDone && !resMultiDone  && !aptMultiDone && !commDone && !instDone)
             {
                 await sleep(500);
             }
 
             buildResSingleTable();
             buildResMultiTable();
+            buildAptMultiTable();
             buildCommTables();
             buildInstTables();
         }
@@ -1207,6 +1347,48 @@
                 }
                 
                 col3.innerText = formatter.format(ResMultiTiers.Tiers[i].Price);
+
+                row.appendChild(col1);
+                row.appendChild(col2);
+                row.appendChild(col3);
+
+                tableBody.appendChild(row);
+            }
+        }
+
+        function buildAptMultiTable() {
+            var formatter = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+
+                // These options are needed to round to whole numbers if that's what you want.
+                //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+                //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+            });
+
+            var tableBody = document.getElementById('AptMultiTBody');
+
+            for (i = 0; i < AptMultiTiers.Tiers.length; i++) {
+                var row = document.createElement('tr');
+
+                var col1 = document.createElement('td');
+                var col2 = document.createElement('td');
+                var col3 = document.createElement('td');
+
+                if (i == 0) {
+                    col1.innerText = formatter.format(AptMultiTiers.BaseRate);
+                }
+                var newMinValue = AptMultiTiers.Tiers[i].LowEnd + 1;
+
+
+                if (i < AptMultiTiers.Tiers.length - 1) {
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(AptMultiTiers.Tiers[i].HighEnd);
+                }
+                else {
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
+                }
+
+                col3.innerText = formatter.format(AptMultiTiers.Tiers[i].Price);
 
                 row.appendChild(col1);
                 row.appendChild(col2);
