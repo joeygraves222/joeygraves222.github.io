@@ -869,20 +869,19 @@
     <script>
 
         let ResSingleTiers = {};
-        
+
 
         let ResMultiTiers = {};
 
         let AptMultiTiers = {};
-        
+
         let CommTiers = {};
-        
+
 
         let InstTiers = {};
-        
-    
-        function OnSelectionChanged(selectedItem)
-        {
+
+
+        function OnSelectionChanged(selectedItem) {
             var ResSingle = document.getElementById('ResSingleCalcCont');
             var ResMulti = document.getElementById('ResMultiCalcCont');
             var AptMulti = document.getElementById('AptMultiCalcCont');
@@ -891,40 +890,35 @@
 
             var value = selectedItem.value;
 
-            if (value === "ResSingle")
-            {
+            if (value === "ResSingle") {
                 ResSingle.hidden = false;
                 ResMulti.hidden = true;
                 Comm.hidden = true;
                 Inst.hidden = true;
                 AptMulti.hidden = true;
             }
-            else if (value === "ResMulti")
-            {
+            else if (value === "ResMulti") {
                 ResSingle.hidden = true;
                 ResMulti.hidden = false;
                 Comm.hidden = true;
                 Inst.hidden = true;
                 AptMulti.hidden = true;
             }
-            else if (value === "AptMulti")
-            {
+            else if (value === "AptMulti") {
                 ResSingle.hidden = true;
                 ResMulti.hidden = true;
                 Comm.hidden = true;
                 Inst.hidden = true;
                 AptMulti.hidden = false;
             }
-            else if (value === "Comm")
-            {
+            else if (value === "Comm") {
                 ResSingle.hidden = true;
                 ResMulti.hidden = true;
                 Comm.hidden = false;
                 Inst.hidden = true;
                 AptMulti.hidden = true;
             }
-            else
-            {
+            else {
                 ResSingle.hidden = true;
                 ResMulti.hidden = true;
                 Comm.hidden = true;
@@ -934,46 +928,37 @@
         }
 
 
-        function CalculateResSingleBill()
-        {
+        function CalculateResSingleBill() {
             var input = document.getElementById('SingleFamilyUsageInput');
             var DisplayElement = document.getElementById('ResSingleResultText')
             var Usage = input.value;
             var PriceToDisplay = 0;
-            if (Usage > 0)
-            {
-
-                
+            if (Usage > 0) {
 
 
-                for (i = 0; i < ResSingleTiers.Tiers.length; i++)
-                {
-                    if (ResSingleTiers.Tiers[i].MaxTier)
-                    {
-                        if (Usage > ResSingleTiers.Tiers[i].LowEnd)
-                        {
-                            var TierUsage = (Usage - ResSingleTiers.Tiers[i].LowEnd)/1000;
+
+
+                for (i = 0; i < ResSingleTiers.Tiers.length; i++) {
+                    if (ResSingleTiers.Tiers[i].MaxTier) {
+                        if (Usage > ResSingleTiers.Tiers[i].LowEnd) {
+                            var TierUsage = (Usage - ResSingleTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * ResSingleTiers.Tiers[i].Price);
                         }
                     }
-                    else
-                    {
-                        if (Usage > ResSingleTiers.Tiers[i].LowEnd && Usage <= ResSingleTiers.Tiers[i].HighEnd)
-                        {
-                            var TierUsage = (Usage - ResSingleTiers.Tiers[i].LowEnd)/1000;
+                    else {
+                        if (Usage > ResSingleTiers.Tiers[i].LowEnd && Usage <= ResSingleTiers.Tiers[i].HighEnd) {
+                            var TierUsage = (Usage - ResSingleTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * ResSingleTiers.Tiers[i].Price);
                         }
-                        else
-                        {
-                            if (Usage > ResSingleTiers.Tiers[i].HighEnd)
-                            {
+                        else {
+                            if (Usage > ResSingleTiers.Tiers[i].HighEnd) {
                                 PriceToDisplay += ResSingleTiers.Tiers[i].TierValue;
                             }
                         }
                     }
                 }
 
-                
+
             }
             PriceToDisplay += ResSingleTiers.BaseRate;
 
@@ -1017,67 +1002,55 @@
             DisplayElement.textContent = PriceToDisplay.toFixed(2);
         }
 
-        function CalculateResMultiBill()
-        {
+        function CalculateResMultiBill() {
             var input = document.getElementById('MultiFamilyUsageInput');
             var DisplayElement = document.getElementById('ResMultiResultText')
             var NumUnitsInput = document.getElementById('MultiFamilyUnitsInput');
             var NumUnits = NumUnitsInput.value;
             var BaseRate;
-            if (NumUnits > 0)
-            {
+            if (NumUnits > 0) {
                 BaseRate = ResMultiTiers.BaseRate * NumUnits;
             }
-            else
-            {
+            else {
                 BaseRate = ResMultiTiers.BaseRate;
             }
-            
+
             var Usage = input.value;
             var PriceToDisplay = 0;
-            if (Usage > 0)
-            {
-
-                
+            if (Usage > 0) {
 
 
-                for (i = 0; i < ResMultiTiers.Tiers.length; i++)
-                {
+
+
+                for (i = 0; i < ResMultiTiers.Tiers.length; i++) {
                     //console.log(i + " At: " + PriceToDisplay);
-                    if (ResMultiTiers.Tiers[i].MaxTier)
-                    {
-                        if (Usage > ResMultiTiers.Tiers[i].LowEnd)
-                        {
-                            var TierUsage = (Usage - ResMultiTiers.Tiers[i].LowEnd)/1000;
+                    if (ResMultiTiers.Tiers[i].MaxTier) {
+                        if (Usage > ResMultiTiers.Tiers[i].LowEnd) {
+                            var TierUsage = (Usage - ResMultiTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * ResMultiTiers.Tiers[i].Price);
                         }
                     }
-                    else
-                    {
-                        if (Usage > ResMultiTiers.Tiers[i].LowEnd && Usage <= ResMultiTiers.Tiers[i].HighEnd)
-                        {
-                            var TierUsage = (Usage - ResMultiTiers.Tiers[i].LowEnd)/1000;
+                    else {
+                        if (Usage > ResMultiTiers.Tiers[i].LowEnd && Usage <= ResMultiTiers.Tiers[i].HighEnd) {
+                            var TierUsage = (Usage - ResMultiTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * ResMultiTiers.Tiers[i].Price);
                         }
-                        else
-                        {
-                            if (Usage > ResMultiTiers.Tiers[i].HighEnd)
-                            {
+                        else {
+                            if (Usage > ResMultiTiers.Tiers[i].HighEnd) {
                                 PriceToDisplay += ResMultiTiers.Tiers[i].TierValue;
                             }
                         }
                     }
                 }
 
-                
+
             }
             PriceToDisplay += BaseRate;
 
             DisplayElement.textContent = PriceToDisplay.toFixed(2);
         }
 
-        function CalculateCommBill()
-        {
+        function CalculateCommBill() {
             var MeterInput = document.getElementById('CommMeterSizeValue');
             var UsageInput = document.getElementById('CommUsageInput');
             var Usage = UsageInput.value;
@@ -1085,30 +1058,22 @@
             var PriceToDisplay = 0;
             var DisplayElement = document.getElementById("CommResultText");
 
-            if (Usage > 0)
-            {
+            if (Usage > 0) {
 
-                for (i = 0; i < CommTiers.Tiers.length; i++)
-                {
-                    if (CommTiers.Tiers[i].MaxTier)
-                    {
-                        if (Usage > CommTiers.Tiers[i].LowEnd)
-                        {
-                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd)/1000;
+                for (i = 0; i < CommTiers.Tiers.length; i++) {
+                    if (CommTiers.Tiers[i].MaxTier) {
+                        if (Usage > CommTiers.Tiers[i].LowEnd) {
+                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * CommTiers.Tiers[i].Price);
                         }
                     }
-                    else
-                    {
-                        if (Usage > CommTiers.Tiers[i].LowEnd && Usage <= CommTiers.Tiers[i].HighEnd)
-                        {
-                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd)/1000;
+                    else {
+                        if (Usage > CommTiers.Tiers[i].LowEnd && Usage <= CommTiers.Tiers[i].HighEnd) {
+                            var TierUsage = (Usage - CommTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * CommTiers.Tiers[i].Price);
                         }
-                        else
-                        {
-                            if (Usage > CommTiers.Tiers[i].HighEnd)
-                            {
+                        else {
+                            if (Usage > CommTiers.Tiers[i].HighEnd) {
                                 PriceToDisplay += CommTiers.Tiers[i].TierValue;
                             }
                         }
@@ -1116,21 +1081,18 @@
                 }
             }
 
-            for (i = 0; i < CommTiers.BaseRates.length; i++)
-            {
-                if (MeterSize == CommTiers.BaseRates[i].MeterSize)
-                {
+            for (i = 0; i < CommTiers.BaseRates.length; i++) {
+                if (MeterSize == CommTiers.BaseRates[i].MeterSize) {
                     PriceToDisplay += CommTiers.BaseRates[i].Rate;
                 }
             }
 
             DisplayElement.textContent = PriceToDisplay.toFixed(2);
-            
+
         }
 
 
-        function CalculateInstBill()
-        {
+        function CalculateInstBill() {
             var MeterInput = document.getElementById('InstMeterSizeValue');
             var UsageInput = document.getElementById('InstUsageInput');
             var Usage = UsageInput.value;
@@ -1138,30 +1100,22 @@
             var PriceToDisplay = 0;
             var DisplayElement = document.getElementById("InstResultText");
 
-            if (Usage > 0)
-            {
+            if (Usage > 0) {
 
-                for (i = 0; i < InstTiers.Tiers.length; i++)
-                {
-                    if (InstTiers.Tiers[i].MaxTier)
-                    {
-                        if (Usage > InstTiers.Tiers[i].LowEnd)
-                        {
-                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd)/1000;
+                for (i = 0; i < InstTiers.Tiers.length; i++) {
+                    if (InstTiers.Tiers[i].MaxTier) {
+                        if (Usage > InstTiers.Tiers[i].LowEnd) {
+                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * InstTiers.Tiers[i].Price);
                         }
                     }
-                    else
-                    {
-                        if (Usage > InstTiers.Tiers[i].LowEnd && Usage <= InstTiers.Tiers[i].HighEnd)
-                        {
-                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd)/1000;
+                    else {
+                        if (Usage > InstTiers.Tiers[i].LowEnd && Usage <= InstTiers.Tiers[i].HighEnd) {
+                            var TierUsage = (Usage - InstTiers.Tiers[i].LowEnd) / 1000;
                             PriceToDisplay += (TierUsage * InstTiers.Tiers[i].Price);
                         }
-                        else
-                        {
-                            if (Usage > InstTiers.Tiers[i].HighEnd)
-                            {
+                        else {
+                            if (Usage > InstTiers.Tiers[i].HighEnd) {
                                 PriceToDisplay += InstTiers.Tiers[i].TierValue;
                             }
                         }
@@ -1169,10 +1123,8 @@
                 }
             }
 
-            for (i = 0; i < InstTiers.BaseRates.length; i++)
-            {
-                if (MeterSize == InstTiers.BaseRates[i].MeterSize)
-                {
+            for (i = 0; i < InstTiers.BaseRates.length; i++) {
+                if (MeterSize == InstTiers.BaseRates[i].MeterSize) {
                     PriceToDisplay += InstTiers.BaseRates[i].Rate;
                 }
             }
@@ -1181,17 +1133,15 @@
         }
 
 
-        async function GetFromFirebase()
-        {
+        async function GetFromFirebase() {
             var resSingleDone = false;
             var resMultiDone = false;
             var aptMultiDone = false;
             var commDone = false;
             var instDone = false;
             var resSinglexhr = new XMLHttpRequest();
-            resSinglexhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/ResSingleRates.json', true);
-            resSinglexhr.onload = function()
-            {
+            resSinglexhr.open('GET', 'https://tieredwaterrates-default-rtdb.firebaseio.com/ResSingleRates.json', true);
+            resSinglexhr.onload = function () {
                 var result = JSON.parse(this.responseText);
                 ResSingleTiers = result.Base;
                 //buildResSingleTable();
@@ -1200,9 +1150,8 @@
 
 
             var resMultixhr = new XMLHttpRequest();
-            resMultixhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/ResMultiRates.json', true);
-            resMultixhr.onload = function()
-            {
+            resMultixhr.open('GET', 'https://tieredwaterrates-default-rtdb.firebaseio.com/ResMultiRates.json', true);
+            resMultixhr.onload = function () {
                 var result = JSON.parse(this.responseText);
                 ResMultiTiers = result.Base;
                 //buildResMultiTable();
@@ -1220,9 +1169,8 @@
 
 
             var commxhr = new XMLHttpRequest();
-            commxhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/CommRates.json', true);
-            commxhr.onload = function()
-            {
+            commxhr.open('GET', 'https://tieredwaterrates-default-rtdb.firebaseio.com/CommRates.json', true);
+            commxhr.onload = function () {
                 var result = JSON.parse(this.responseText);
                 CommTiers = result.Base;
                 //buildCommTables();
@@ -1231,9 +1179,8 @@
 
 
             var instxhr = new XMLHttpRequest();
-            instxhr.open('GET','https://tieredwaterrates-default-rtdb.firebaseio.com/InstRates.json', true);
-            instxhr.onload = function()
-            {
+            instxhr.open('GET', 'https://tieredwaterrates-default-rtdb.firebaseio.com/InstRates.json', true);
+            instxhr.onload = function () {
                 var result = JSON.parse(this.responseText);
                 InstTiers = result.Base;
                 //buildInstTables();
@@ -1248,8 +1195,7 @@
             commxhr.send(JSON.stringify(CommTiers));
             instxhr.send(JSON.stringify(InstTiers));
 
-            while(!resSingleDone && !resMultiDone  && !aptMultiDone && !commDone && !instDone)
-            {
+            while (!resSingleDone && !resMultiDone && !aptMultiDone && !commDone && !instDone) {
                 await sleep(500);
             }
 
@@ -1264,8 +1210,7 @@
             return new Promise(resolve => setTimeout(resolve, ms));
         }
 
-        function buildResSingleTable()
-        {
+        function buildResSingleTable() {
             var formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -1273,33 +1218,30 @@
                 // These options are needed to round to whole numbers if that's what you want.
                 //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
                 //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-                });
+            });
 
             var tableBody = document.getElementById('ResSingleTBody');
 
-            for (i = 0; i < ResSingleTiers.Tiers.length; i++)
-            {
+            for (i = 0; i < ResSingleTiers.Tiers.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
                 var col2 = document.createElement('td');
                 var col3 = document.createElement('td');
 
-                if (i == 0)
-                {
+                if (i == 0) {
                     col1.innerText = formatter.format(ResSingleTiers.BaseRate);
                 }
                 var newMinValue = ResSingleTiers.Tiers[i].LowEnd + 1;
-                
 
-                if (i < ResSingleTiers.Tiers.length -1)
-                {
-                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResSingleTiers.Tiers[i].HighEnd); 
+
+                if (i < ResSingleTiers.Tiers.length - 1) {
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResSingleTiers.Tiers[i].HighEnd);
                 }
-                else{
+                else {
                     col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
                 }
-                
+
                 col3.innerText = formatter.format(ResSingleTiers.Tiers[i].Price);
 
                 row.appendChild(col1);
@@ -1310,8 +1252,7 @@
             }
         }
 
-        function buildResMultiTable()
-        {
+        function buildResMultiTable() {
             var formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -1319,33 +1260,30 @@
                 // These options are needed to round to whole numbers if that's what you want.
                 //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
                 //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-                });
+            });
 
             var tableBody = document.getElementById('ResMultiTBody');
 
-            for (i = 0; i < ResMultiTiers.Tiers.length; i++)
-            {
+            for (i = 0; i < ResMultiTiers.Tiers.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
                 var col2 = document.createElement('td');
                 var col3 = document.createElement('td');
 
-                if (i == 0)
-                {
+                if (i == 0) {
                     col1.innerText = formatter.format(ResMultiTiers.BaseRate);
                 }
                 var newMinValue = ResMultiTiers.Tiers[i].LowEnd + 1;
-                
 
-                if (i < ResMultiTiers.Tiers.length -1)
-                {
-                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResMultiTiers.Tiers[i].HighEnd); 
+
+                if (i < ResMultiTiers.Tiers.length - 1) {
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(ResMultiTiers.Tiers[i].HighEnd);
                 }
-                else{
+                else {
                     col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
                 }
-                
+
                 col3.innerText = formatter.format(ResMultiTiers.Tiers[i].Price);
 
                 row.appendChild(col1);
@@ -1398,8 +1336,7 @@
             }
         }
 
-        function buildCommTables()
-        {
+        function buildCommTables() {
             var formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -1407,23 +1344,21 @@
                 // These options are needed to round to whole numbers if that's what you want.
                 //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
                 //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-                });
+            });
 
             var sizeTableBody = document.getElementById('CommSizeTBody');
             var rateTableBody = document.getElementById('CommRateTBody');
 
-            for (i = 0; i < CommTiers.BaseRates.length; i++)
-            {
+            for (i = 0; i < CommTiers.BaseRates.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
                 var col2 = document.createElement('td');
 
-                if (i == 0)
-                {
+                if (i == 0) {
                     col1.innerText = CommTiers.BaseRates[i].MeterSize + '" Or Smaller';
                 }
-                else{
+                else {
                     col1.innerText = CommTiers.BaseRates[i].MeterSize + '"';
                 }
 
@@ -1435,8 +1370,7 @@
                 sizeTableBody.appendChild(row);
             }
 
-            for (i = 0; i < CommTiers.Tiers.length; i++)
-            {
+            for (i = 0; i < CommTiers.Tiers.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
@@ -1444,11 +1378,10 @@
 
                 var newMinValue = CommTiers.Tiers[i].LowEnd + 1;
 
-                if (i < CommTiers.Tiers.length -1)
-                {
-                   col1.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(CommTiers.Tiers[i].HighEnd); 
+                if (i < CommTiers.Tiers.length - 1) {
+                    col1.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(CommTiers.Tiers[i].HighEnd);
                 }
-                else{
+                else {
                     col1.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
                 }
 
@@ -1461,8 +1394,7 @@
             }
         }
 
-        function buildInstTables()
-        {
+        function buildInstTables() {
             var formatter = new Intl.NumberFormat('en-US', {
                 style: 'currency',
                 currency: 'USD',
@@ -1470,23 +1402,21 @@
                 // These options are needed to round to whole numbers if that's what you want.
                 //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
                 //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
-                });
+            });
 
             var sizeTableBody = document.getElementById('InstSizeTBody');
             var rateTableBody = document.getElementById('InstRateTBody');
 
-            for (i = 0; i < InstTiers.BaseRates.length; i++)
-            {
+            for (i = 0; i < InstTiers.BaseRates.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
                 var col2 = document.createElement('td');
 
-                if (i == 0)
-                {
+                if (i == 0) {
                     col1.innerText = InstTiers.BaseRates[i].MeterSize + '" Or Smaller';
                 }
-                else{
+                else {
                     col1.innerText = InstTiers.BaseRates[i].MeterSize + '"';
                 }
 
@@ -1498,26 +1428,23 @@
                 sizeTableBody.appendChild(row);
             }
 
-            for (i = 0; i < InstTiers.Tiers.length; i++)
-            {
+            for (i = 0; i < InstTiers.Tiers.length; i++) {
                 var row = document.createElement('tr');
 
                 var col1 = document.createElement('td');
                 var col2 = document.createElement('td');
                 var col3 = document.createElement('td');
 
-                if (i == 0)
-                {
+                if (i == 0) {
                     col1.innerText = formatter.format(ResSingleTiers.BaseRate);
                 }
 
                 var newMinValue = InstTiers.Tiers[i].LowEnd + 1;
 
-                if (i < InstTiers.Tiers.length -1)
-                {
-                   col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(InstTiers.Tiers[i].HighEnd); 
+                if (i < InstTiers.Tiers.length - 1) {
+                    col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' - ' + new Intl.NumberFormat().format(InstTiers.Tiers[i].HighEnd);
                 }
-                else{
+                else {
                     col2.innerText = new Intl.NumberFormat().format(newMinValue) + ' +';
                 }
 
@@ -1530,10 +1457,11 @@
                 rateTableBody.appendChild(row);
             }
         }
-    
 
-        window.onload = function(){
+
+        window.onload = function () {
             GetFromFirebase();
+            OnSelectionChanged(document.getElementById('option-1'))
         };
     </script>
 </html>
